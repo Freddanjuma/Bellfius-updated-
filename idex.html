@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <link rel="stylesheet" href="{{asset('assets/styles.css')}}">
+    <title>Belfius Bank</title>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="assets/bel-logo.png" alt="" class="logo">
+        <div class="mid-nav">
+            <div class="search-bar">
+                <div class="search-icon">
+                    <i class='bx bx-search'></i>
+                </div>
+                <input type="text" placeholder="Search..." class="search-input">
+            </div>
+            <!-- <div class="search-icon">
+                <i class='bx bx-search'></i>
+            </div>
+            <input type="text" placeholder="Search..." class="search-bar"> -->
+        </div>
+        <div class="end-nav">
+            <h5>Welcome: Styler Heather & Norman Monack</h5>
+            <small>Last Login May 05, 2025 | 11:23 AM</small>
+        </div>
+    </nav>
+
+    <section class="mid-section">
+        <div class="side-nav">
+            <ul>
+                <li class="active"> <i class='bx bxs-home' ></i><a href=""> Account</a></li>
+                <li> <img src="assets/credit_cards.png" alt="" class="icon"><a href="">Cards</a></li>
+                <li> <img src="assets/Loan.png" alt="" class="icon"><a href="">Loans</a></li>
+                <li> <i class='bx bx-dollar-circle' ></i><a href="">IRS</a></li>
+                <li><i class='bx bx-money-withdraw' ></i><a href="">EFT</a></li>
+                <li><i class='bx bx-money-withdraw' ></i><a href="">Shares</a></li>
+                <li><img src="assets/Money_Exchange.png" alt="" class="icon"><a href="">Money Exchange</a></li>
+            </ul>
+            <ul class="bottom-nav">
+                <li> <img src="assets/change password.png" alt="" class="icon"><a href=""> Change Password</a></li>
+                <li> <i class='bx bx-user-circle'></i><a href="">Your Profile</a></li>
+
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <li>
+                            <img src="assets/logout.png" alt="" class="icon">
+                            <button type="submit" style="background: none; border: none; cursor: pointer;">
+                                Logout
+                            </button>
+                        </li>
+
+                        {{-- <button type="submit" style="background: none; border: none; cursor: pointer;">
+                            <img src="assets/Logout.png" alt="" class="icon"><a href=""> Logout</a>
+                        </button> --}}
+                    </form>
+
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h2 class="active">Account Summary</h2>
+                <h2>Transactions</h2>
+                <h2>Insurance</h2>
+                <h2>Offers</h2>
+                <h2>Awards & Referrals</h2>
+            </div>
+            <div class="content">
+                <div class="left-side">
+                    <div style="display: flex; align-items: center; gap: 1rem; background: #f2dfbb2a; padding: 0.5rem; border-radius: 0.5rem;">
+                        <p style="text-decoration: underline; font-size: 0.75rem;">View Account Statement</p>
+                        <small style="color: orange; text-decoration:underline; font-size:0.7rem">Email</small>
+                    </div>
+                    <div class="card" style="justify-content: space-between;">
+                        <img src="assets/wallet-white.png" alt="" class="icon" style="background-color: #ffa500; border-radius:1rem">
+                        <div>
+                            <h4>Available Balance</h4>
+                             <p>£1,000,000.00</p>
+                             <small style="font-size: 0.6rem;">(Last updated 05/06/2025)</small>
+                        </div>
+                        <div>
+                            <img src="assets/curve.png" alt="" class="icon" style="width: 2rem; height: 1.5rem;">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Score</h3>
+                        <div style="padding: 0 2rem;">
+                            <!-- <span>797</span> -->
+                            <img src="assets/speedo.png" alt="" class="big-icon" style="width: 11rem;">
+                        </div>
+                        <!-- <span style="position: absolute;right: 1rem; bottom: 0.3rem; font-size: 0.8rem; font-weight: 900    ;">
+                            900
+                        </span> -->
+                    </div>
+                    <div class="card" style="align-items: center;">
+                        <div>
+                            <h3>Cards <span style="color: orange; font-size:1.1rem">1</span>/2</h3>
+                            <span style="position: absolute; right: 1rem;">
+                                <i class="uis uis-angle-left"></i>
+                                  <i class="uis uis-angle-right active"></i>
+                            </span>
+                        </div>
+                        <div style="align-items: center; display: flex; flex-direction: column;">
+                            <span style="display: flex; flex-direction: column; align-items: center;">
+                                <h4>************25288</h4>
+                                <small style="color: orange; text-decoration: underline;">View Statement</small>
+                            </span>
+
+                            <!-- Donut Chart Starts Here -->
+                            <div style="width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(orange 0% 29%, #f2dfbbbe 29% 100%); position: relative;">
+                                <div style="width: 80px; height: 80px; background-color: white; border-radius: 50%; position: absolute; top: 42%; left: 50%; transform: translate(-50%, -50%);
+                                            display: flex; justify-content: center; align-items: center; text-align: center; font-family: sans-serif; font-size: 0.55rem; font-weight: bold; color: #333; padding: 10px;">
+                                    Credit Utilised
+                                    <br><span style="display: flex; gap: 0.1rem; align-items: center;">
+                                        <b style="font-size: 0.7rem;">£</b> <span style="color: orange;">21,250 </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Donut Chart Ends Here -->
+                        </div>
+
+                        <span style="font-size: 0.8rem;">
+                            <small>Credit Limit</small>
+                            <b>£78,480</b>
+                        </span>
+                        <span>
+                            <small style="color: orange; text-decoration: underline; cursor: pointer;font-size: 0.7rem;">View Details|Generate Statement</small>
+                            <!-- <b>£78,480</b> -->
+                        </span>
+
+                        <div class="reward-points">
+                            <span style="font-size: 0.75rem;">
+                                <h4>Reward Points</h4>
+                                <h4>78,480 points</h4>
+                            </span>
+                            <div class="progress-bar" style="margin-top: 1rem;">
+                                <div class="progress" style="width: 60%;"></div>
+                            </div>
+                            <span style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                <h5>Redeem History</h5>
+                                <a href="" class="redeem-button">
+                                    Redeem
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mid-side">
+                    <div class="card" style="display: flex; flex-direction: column; gap: 0.6rem; width: 100%; overflow: hidden;">
+                        <div>
+                            <span style="display: flex; align-items: center; gap: 0.1rem; margin-left: 1rem;">
+                                <img src="assets/contact-icon-1.png" alt="" class="icon"><h5>Customer Information</h5>
+                            </span>
+                            <span style="color: orange; font-size: 0.7rem;">
+                                Edit Details
+                            </span>
+                        </div>
+                        <div style="gap: 1rem; padding: 1rem;">
+                            <img src="assets/profile-image.jpg" alt="" class="big-icon" style="margin-top: -0.5rem;">
+                            <div class="col-1">
+                                <pre>AC Number      : 0005 9898 25278</pre>
+                                <pre>Name                : Styler Heather & Norman Monack</pre>
+                                <pre>Account Type  : International Joint Account</pre>
+                                <pre>Branch              :</pre>
+                            </div>
+                            <div class="col-2">
+                                <pre>IFSC Code  : BARCGB22</pre>
+                                <pre>Country      : USA</pre>
+                                <pre>Phone No.  :</pre>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items: flex-end; position: relative;">
+                            <a href="" class="redeem-button" style="position:absolute; right: 0;">
+                                More Info
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card" style="display: flex; flex-direction: column; gap: 0.6rem; width: 100%;">
+                        <div>
+                            <span style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
+                                <img src="assets/Outgoing_Call.png" alt="" class="icon" style="width:0.7rem"><h5>Last 10 Interactions</h5>
+                            </span>
+
+                            <span style="color: orange; font-size: 0.7rem;">
+                                View All Interactions>>
+                            </span>
+                        </div>
+                        <div>
+                            <table>
+                                <thead>
+                                    <th>Date & Time</th>
+                                    <th>Duration</th>
+                                    <th>Source</th>
+                                    <th>Call Reason</th>
+                                    <th>Details</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>06/05/2025 - 11:20 pm</td>
+                                    <td>3:37</td>
+                                    <td>Mail</td>
+                                    <td>Chequebook Requested</td>
+                                    <td style="color: orange; text-decoration: underline;">View Details</td>
+                                    </tr>
+                                    <tr>
+                                        <td>06/05/2025 - 11:30 pm</td>
+                                    <td>10:30</td>
+                                    <td>Mail</td>
+                                    <td>Phone Number Updation</td>
+                                    <td style="color: orange; text-decoration: underline;">View Details</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05/05/2025 - 10:23 pm</td>
+                                    <td>6:40</td>
+                                    <td>Mail</td>
+                                    <td>Balance Enquiry</td>
+                                    <td style="color: orange; text-decoration: underline;">View Details</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05/05/2025 - 12:30 pm</td>
+                                    <td>9:52</td>
+                                    <td>Mail</td>
+                                    <td>A/C Transaction</td>
+                                    <td style="color: orange; text-decoration: underline;">View Details</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-row">
+                        <div class="card" style="display: flex; flex-direction: column; gap: 0.3rem; width:55%;">
+                            <div>
+                                <span style="display: flex; align-items: center; gap: 0.3rem; margin-left: 0.7rem;">
+                                    <img src="assets/rise.png" alt="" class="icon" style="width:1rem"><h5>Spend Analysis</h5>
+                                </span>
+
+                                <span style="color: orange; font-size: 0.75rem;">
+                                    View Details >>
+                                </span>
+                            </div>
+                            <div>
+                                <div id="spendLineChart" style="width: 100%; font-size:0.1rem"></div> <!-- Chart container -->
+                            </div>
+                        </div>
+
+                        <div class="card" style="display: flex; flex-direction: column; gap: 0.6rem; width:44%;">
+                            <div>
+                                <span style="font-size: 1rem; display: flex; align-items: center; gap: 0.3rem; margin-left: 0.7rem;">
+                                    <img src="assets/Telephone-white.png" alt="" class="icon" style="background-color: #ffa500;">
+
+                                    <h5>All Expenses</h5>
+                                </span>
+                                <span style="font-size: 0.75rem;">
+                                    Monthly
+                                </span>
+                            </div>
+                            <div>
+                                <div id="expensesPieChart"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="end-side">
+                    <div class="card" style="display: flex; flex-direction: column; gap: 0.45rem;">
+                        <div>
+                            <span style="font-size: 1rem; display: flex; align-items: center; gap: 0.3rem; margin-left: 0.7rem;">
+                                <img src="assets/Telephone-white.png" alt="" class="icon" style="background-color: #ffa500;">
+                                <h5 style="font-size: 0.75rem;">Pending Transactions</h5>
+                            </span>
+                            <span style="color: orange; font-size: 0.7rem; text-decoration: underline;">
+                                Send on Email
+                            </span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <a href="" class="period-tab">All</a>
+                            <a href="" class="period-tab active">Today</a>
+                            <a href="" class="period-tab">Last Week</a>
+                            <a href="" class="period-tab">Last Month</a>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; background-color: #f2dfbb2a; padding: 0.5rem; width: 100%; border-radius: 0.5rem;">
+                            <span style="display: flex; flex-direction: column; margin-left:1.8rem">
+                                <b style="font-size: 0.65rem; ">ACH Credit | Hatton Garden Met D..</b>
+                                <small style="font-size: 0.6rem;">May 05, 2025 at 10:22 am ID:6392763</small>
+                            </span>
+                            <span style="display: flex; flex-direction: column; font-size: 0.7rem;">
+                                <b>+£ 27,554,589</b>
+                                <small style="color: orange; font-size: 0.6rem; text-decoration: underline;">Details></small>
+                            </span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; background-color: #f2dfbb2a; padding: 0.5rem; width: 100%; border-radius: 0.5rem;">
+                            <span style="display: flex; flex-direction: column; margin-left:1.8rem">
+                                <b style="font-size: 0.65rem; ">ACH Credit | Hatton Garden Met D..</b>
+                                <small style="font-size: 0.6rem;">May 05, 2025 at 10:22 am ID:6392763</small>
+                            </span>
+                            <span style="display: flex; flex-direction: column; font-size: 0.7rem;">
+                                <b>+£ 27,554,589</b>
+                                <small style="color: orange; font-size: 0.6rem; text-decoration: underline;">Details></small>
+                            </span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; background-color: #f2dfbb2a; padding: 0.5rem; width: 100%; border-radius: 0.5rem;">
+                            <span style="display: flex; flex-direction: column; margin-left:1.8rem">
+                                <b style="font-size: 0.65rem; ">ACH Credit | Hatton Garden Met D..</b>
+                                <small style="font-size: 0.6rem;">May 05, 2025 at 10:22 am ID:6392763</small>
+                            </span>
+                            <span style="display: flex; flex-direction: column; font-size: 0.7rem;">
+                                <b>+£ 27,554,589</b>
+                                <small style="color: orange; font-size: 0.6rem; text-decoration: underline;">Details></small>
+                            </span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; background-color: #f2dfbb2a; padding: 0.5rem; width: 100%; border-radius: 0.5rem;">
+                            <span style="display: flex; flex-direction: column; margin-left:1.8rem">
+                                <b style="font-size: 0.65rem; ">ACH Credit | Hatton Garden Met D..</b>
+                                <small style="font-size: 0.6rem;">May 05, 2025 at 10:22 am ID:6392763</small>
+                            </span>
+                            <span style="display: flex; flex-direction: column; font-size: 0.7rem;">
+                                <b>+£ 27,554,589</b>
+                                <small style="color: orange; font-size: 0.6rem; text-decoration: underline;">Details></small>
+                            </span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; background-color: #f2dfbb2a; padding: 0.5rem; width: 100%; border-radius: 0.5rem;">
+                            <span style="display: flex; flex-direction: column; margin-left:1.8rem">
+                                <b style="font-size: 0.65rem; ">ACH Credit | Hatton Garden Met D..</b>
+                                <small style="font-size: 0.6rem;">May 05, 2025 at 10:22 am ID:6392763</small>
+                            </span>
+                            <span style="display: flex; flex-direction: column; font-size: 0.7rem;">
+                                <b>+£ 27,554,589</b>
+                                <small style="color: orange; font-size: 0.6rem; text-decoration: underline;">Details></small>
+                            </span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; background-color: #f2dfbb2a; padding: 0.5rem; width: 100%; border-radius: 0.5rem;">
+                            <span style="display: flex; flex-direction: column; margin-left:1.8rem">
+                                <b style="font-size: 0.65rem; ">ACH Credit | Hatton Garden Met D..</b>
+                                <small style="font-size: 0.6rem;">May 05, 2025 at 10:22 am ID:6392763</small>
+                            </span>
+                            <span style="display: flex; flex-direction: column; font-size: 0.7rem;">
+                                <b>+£ 27,554,589</b>
+                                <small style="color: orange; font-size: 0.6rem; text-decoration: underline;">Details></small>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <span>
+                                <h5 style="font-size: 0.75rem;">Customer Journey</h5>
+                                <small style="font-size: 0.6rem; color:gray">Joined since 20XX</small>
+                            </span>
+                            <span style="color: orange; font-size: 0.7rem; text-decoration: underline;">
+                                View Details
+                            </span>
+                        </div>
+                        <div class="graph">
+                            <span class="line-1"></span>
+                            <span class="line-2"></span>
+                            <span class="line-3"></span>
+                            <span class="line-4"></span>
+                            <span class="line-5"></span>
+                            <span class="line-6"></span>
+                            <span class="line-7"></span>
+                            <span class="line-8"></span>
+                            <span class="line-9"></span>
+                            <span class="line-10"></span>
+                            <span class="line-11"></span>
+                        </div>
+
+                    </div>
+                    <div class="card quick-links">
+                        <h5>Quick Links</h5>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <a href=""> Add Link 1</a>
+                            <a href=""> Add Link 2</a>
+                            <a href=""> Add Link 3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        var options = {
+            chart: {
+                type: 'donut',
+                height: 190,
+            },
+            series: [20000, 25000, 18000],
+            labels: ['Income', 'Savings', 'Expenses'],
+            colors: ['#ffa500', '#f9c667', '#f2dfbb99'],
+            dataLabels: {
+                formatter: function (val, opts) {
+                    return '';
+                }
+            },
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        return "£" + val;
+                    }
+                }
+            },
+            plotOptions: {
+                pie: {
+                    donut: {
+                        size: '20%'
+                    }
+                }
+            },
+            legend: {
+                markers: {
+                    width: 50,
+                    height: 8,
+                    radius: 2 // set to 0 for fully square/rectangular
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#expensesPieChart"), options);
+        chart.render();
+    </script>
+
+    <script>
+        var lineOptions = {
+            chart: {
+                type: 'line',
+                height: 190,
+                toolbar: { show: false }
+            },
+            series: [
+                {
+                    name: 'Home & Utilities',
+                    data: [400, 430, 410, 450, 480, 460, 440, 470, 450, 490, 450, 430]
+                },
+                {
+                    name: 'Insurance & Savings',
+                    data: [400, 410, 390, 395, 370, 430, 440, 410, 450, 395, 385, 380]
+                }
+            ],
+            xaxis: {
+                categories: [
+                    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                ]
+            },
+            stroke: {
+                curve: 'smooth',
+                width: 3
+            },
+            colors: ['#f9c667', '#ffa500'],
+
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        return "£" + val;
+                    }
+                }
+            },
+            legend: {
+                position: 'bottom',
+                horizontalAlign: 'left',
+                floating: true,
+                offsetY: 100,
+                offsetX: -1
+              }
+        };
+
+        var lineChart = new ApexCharts(document.querySelector("#spendLineChart"), lineOptions);
+        lineChart.render();
+    </script>
+
+
+
+
+</body>
+</html>
